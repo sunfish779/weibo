@@ -14,6 +14,11 @@ use App\Http\Controllers\StaticPagesController;
 |
 */
 
-Route::get('/', [StaticPagesController::class, 'home']);
-Route::get('/help', [StaticPagesController::class, 'help']);
-Route::get('/about', [StaticPagesController::class, 'about']);
+Route::get('/', 'StaticPagesController@home')->name('home');
+Route::get('/help', 'StaticPagesController@help')->name('help');
+Route::get('/about', 'StaticPagesController@about')->name('about');
+
+Route::get('/signup', 'UsersController@create')->name('signup');
+
+
+
